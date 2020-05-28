@@ -1,6 +1,5 @@
 const canvas = document.querySelector(".canvas");
 const context = canvas.getContext("2d");
-const scoreText = document.querySelector('.score');
 const size = 20;
 
 const rows = canvas.height / size;
@@ -29,8 +28,6 @@ window.addEventListener('keydown', ((evt) => {
             fruit.pickLocation();
         snake.checkCollision();
 
-        if (scoreText.innerText.length > 2)
-            scoreText.style.fontSize = '15em';
-        scoreText.innerText = snake.score;
+        document.querySelector('.score').innerText = snake.score;
     }, 100);
 }());
